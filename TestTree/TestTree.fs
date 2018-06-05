@@ -1,25 +1,22 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
-open FsUnit
+﻿open FsUnit
 open NUnit.Framework
 open Tree
 
 [<Test>]
-let ``test of tree 1``() =
+let ``test of tree class 1``() =
     let tr = new Tree<int>()
     tr.Add(5)
     tr.Delete(10)
     tr.GetList() |> should equal [5]
 
 [<Test>]
-let ``test of tree 2``() =
+let ``test of tree class 2``() =
     let tr = new Tree<int>()
     tr.Delete(10)
     tr.GetList() |> should equal []
 
 [<Test>]
-let ``test of tree 3``() =
+let ``test of tree class 3``() =
     let tr = new Tree<char>()
     let mutable res = []
     tr.Add('d')
@@ -35,7 +32,7 @@ let ``test of tree 3``() =
     res |> should equal ['f'; 'e'; 'd'; 'c'; 'b'; 'a']
 
 [<Test>]
-let ``test of tree 4``() =
+let ``test of tree class 4``() =
     let tr = new Tree<char>()
     let mutable res = []
     tr.Add('d')
@@ -54,8 +51,8 @@ let ``test of tree 4``() =
 
 [<EntryPoint>]
 let main argv =
-    ``test of tree 1``()
-    ``test of tree 2``()
-    ``test of tree 3``()
-    ``test of tree 4``()
-    0 // return an integer exit code
+    ``test of tree class 1``()
+    ``test of tree class 2``()
+    ``test of tree class 3``()
+    ``test of tree class 4``()
+    0
